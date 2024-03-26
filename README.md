@@ -33,6 +33,7 @@ This repository contains all of the elements of the paper.
 
 
 ## [Survey Study](/survey) ($IV.A)
+This folder includes scripts and data relevant to Table 1, Table 2, Figure 5, Table 5, Table 6, Figure 6, Table 7, and Table 8 in the paper.
 
 
 - [Survey Instrument](/survey/Instruments/Survey%20Instrument.pdf): 
@@ -48,6 +49,7 @@ This repository contains all of the elements of the paper.
   - The extracted themes for the qualitative analysis. ($IV.A.4)
 
 ## [Repo mining](/Naming_practices) ($IV.B, $IV.C)
+This folder includes scripts and data relevant to Figure 4, Table 3, and Table 4 in the paper.
 
 - [Naming elements analysis](/naming_elements)
   - The prompts and scripts to analyze the naming elements of the PTMs.
@@ -58,6 +60,9 @@ This repository contains all of the elements of the paper.
   - The manually labeled groud truth data for evaluation.
 
 ## [Naming_anomaly_detectin](/Naming_anomaly_detection) ($V.B)
+This folder includes scripts and data relevant to Figure 8, and Table 9 in the paper.
+
+
 - [APTMs](/Naming_anomaly_detection/APTM)
   - The APTM model and graph conversion pipeline.
 - [Classifier](/Naming_anomaly_detection/classifier)
