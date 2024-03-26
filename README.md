@@ -2,10 +2,6 @@
 
 > Artifact repository for paper: **"I see models being a whole other thing": Naming Practices of Pre-Trained Models in Hugging Face**
 
-## About
-
-This repository contains all of the elements of the paper.
-
 ## Overview
 
 
