@@ -76,8 +76,8 @@ def Custom_Test():
     i = t("Test Input", return_tensors="pt")
     gen = AbstractNNGenerator(m, i)
     l_l, c_i = gen.get_connection()
-    annlayer_list_to_json(l_l, c_i, '/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/convert_test.json')
-    ll2, ci2 = read_annlayer_list_from_json('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/convert_test.json')
-    annlayer_list_to_json(ll2, ci2, '/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/convert_test2.json')
+    annlayer_list_to_json(l_l, c_i, './comparators/pytorch/convert_test.json')
+    ll2, ci2 = read_annlayer_list_from_json('./comparators/pytorch/convert_test.json')
+    annlayer_list_to_json(ll2, ci2, './comparators/pytorch/convert_test2.json')
 
 #Custom_Test()

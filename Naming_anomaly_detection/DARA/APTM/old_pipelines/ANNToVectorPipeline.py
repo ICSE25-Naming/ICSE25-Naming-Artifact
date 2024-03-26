@@ -62,14 +62,14 @@ def auto_vectorize_nlp(model_name_list, output_dir_l, output_dir_p, output_dir_p
 
 
 '''
-l = read_model_from_json('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/temp_models.json', "BertForMaskedLM")
+l = read_model_from_json('./comparators/pytorch/temp_models.json', "BertForMaskedLM")
 auto_vectorize_nlp(
     l, 
-    '/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/test_l.json', 
-    '/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/test_p.json', 
-    '/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/test_pl.json',
-    '/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/test_d.json',
-    '/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/test_dn.json'
+    './comparators/pytorch/test_l.json', 
+    './comparators/pytorch/test_p.json', 
+    './comparators/pytorch/test_pl.json',
+    './comparators/pytorch/test_d.json',
+    './comparators/pytorch/test_dn.json'
     )
     '''
 def auto_vectorize(l_l, c_i, mode='pytorch'):
@@ -245,11 +245,11 @@ def auto_vectorize_from_model_pickle(
     with open(output_dir_dk) as f:
         d_dk = pickle.load(f)
     '''
-    with open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/vec_p.json') as f:
+    with open('./comparators/pytorch/ptm_vectors/vec_p.json') as f:
         vec_p = json.load(f)
-    with open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/vec_d.json') as f:
+    with open('./comparators/pytorch/ptm_vectors/vec_d.json') as f:
         vec_d = json.load(f)
-    with open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/vec_l.json') as f:
+    with open('./comparators/pytorch/ptm_vectors/vec_l.json') as f:
         vec_l = json.load(f)
     
     def get_key_set(d):
@@ -289,29 +289,29 @@ def auto_vectorize_from_model_pickle(
     p_vec_p = add_padding(vec_p, k_p)
     
 
-    with open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/vec_l.pkl', 'wb') as f:
+    with open('./comparators/pytorch/ptm_vectors/vec_l.pkl', 'wb') as f:
         pickle.dump(p_vec_l, f)
-    with open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/vec_d.pkl', 'wb') as f:
+    with open('./comparators/pytorch/ptm_vectors/vec_d.pkl', 'wb') as f:
         pickle.dump(p_vec_d, f)
-    with open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/vec_p.pkl', 'wb') as f:
+    with open('./comparators/pytorch/ptm_vectors/vec_p.pkl', 'wb') as f:
         pickle.dump(p_vec_p, f)
-    with open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/k_l.pkl', 'wb') as f:
+    with open('./comparators/pytorch/ptm_vectors/k_l.pkl', 'wb') as f:
         pickle.dump(k_l, f)
-    with open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/k_d.pkl', 'wb') as f:
+    with open('./comparators/pytorch/ptm_vectors/k_d.pkl', 'wb') as f:
         pickle.dump(k_d, f)
-    with open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/k_p.pkl', 'wb') as f:
+    with open('./comparators/pytorch/ptm_vectors/k_p.pkl', 'wb') as f:
         pickle.dump(k_p, f)
 
 '''
-with open('/depot/davisjam/data/chingwo/PTM-Naming/model_collection/filtered_models.json') as f:
+with open('./model_collection/filtered_models.json') as f:
         models_dict = json.load(f)
 
 auto_vectorize_from_model_json(
-    '/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_data',
+    './comparators/pytorch/ptm_data',
     models_dict,
-    '/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/vec_l.json',
-    '/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/vec_p.json',
-    '/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/vec_d.json'
+    './comparators/pytorch/ptm_vectors/vec_l.json',
+    './comparators/pytorch/ptm_vectors/vec_p.json',
+    './comparators/pytorch/ptm_vectors/vec_d.json'
     )
 '''
 

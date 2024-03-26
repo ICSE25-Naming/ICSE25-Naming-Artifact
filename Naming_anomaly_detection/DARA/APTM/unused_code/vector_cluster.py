@@ -4,13 +4,13 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 import csv
 
-with open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/vec_l.json') as f:
+with open('./comparators/pytorch/ptm_vectors/vec_l.json') as f:
     data_l = json.load(f)
 
-with open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/vec_p.json') as f:
+with open('./comparators/pytorch/ptm_vectors/vec_p.json') as f:
     data_p = json.load(f)
 
-with open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/vec_d.json') as f:
+with open('./comparators/pytorch/ptm_vectors/vec_d.json') as f:
     data_d = json.load(f)
 
 def get_cosine_similarity(fv1, fv2):
@@ -81,8 +81,8 @@ for arch_type in data_l.keys():
         dict_d = calc_norm_euc_dist(info_d, benchmark_model)
         for model_name in dict_l.keys():
 
-            f1 = open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_data/' + name_mod(model_name) + '.json')
-            f2 = open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_data/' + name_mod(model_name) + '.json')
+            f1 = open('./comparators/pytorch/ptm_data/' + name_mod(model_name) + '.json')
+            f2 = open('./comparators/pytorch/ptm_data/' + name_mod(model_name) + '.json')
             d1 = json.load(f1)
             d2 = json.load(f2)
             f1.close()
@@ -94,6 +94,6 @@ for arch_type in data_l.keys():
         groups.append(list(curr_group))
     arch_subtypes[arch_type] = groups
 
-with open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/absolute_groups.json', 'w') as f:
+with open('./comparators/pytorch/ptm_vectors/absolute_groups.json', 'w') as f:
     json.dump(arch_subtypes, f)
 

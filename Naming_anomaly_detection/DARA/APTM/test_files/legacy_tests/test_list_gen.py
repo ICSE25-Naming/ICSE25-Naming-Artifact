@@ -21,10 +21,6 @@ from PIL import Image
 import pandas as pd
 import numpy as np
 
-# use under general env
-# module use /depot/davisjam/data/chingwo/general_env/modules
-# module load conda-env/general_env-py3.8.5
-
 cache_dir = "/scratch/gilbreth/cheung59/cache_huggingface"
 
 class TestRNN(nn.Module):
@@ -365,12 +361,12 @@ def Hash_Order_Test():
     genB.print_ann()
 
 def ResNet18_Onnx_Test():
-    rn18 = onnx.load('/depot/davisjam/data/chingwo/PTM-Naming/models/resnet18-v1-7.onnx')
+    rn18 = onnx.load('./models/resnet18-v1-7.onnx')
     gen = AbstractNNGenerator(model=rn18, framework='onnx')
     gen.print_ann()
 
 def ResNet101_Onnx_Test():
-    rn101 = onnx.load('/depot/davisjam/data/chingwo/PTM-Naming/test_models/resnet101-v1-torch.onnx')
+    rn101 = onnx.load('./test_models/resnet101-v1-torch.onnx')
     gen = AbstractNNGenerator(model=rn101, framework='onnx')
     gen.print_ann()
 
@@ -412,13 +408,13 @@ def Custom2_Test():
     gen.get_connection()
 
 def AN_TORCHONNX_Val_Test():
-    an = onnx.load('/depot/davisjam/data/chingwo/PTM-Naming/model_for_validation/alexnet-torch.onnx')
+    an = onnx.load('./model_for_validation/alexnet-torch.onnx')
     gen = AbstractNNGenerator(model=an, framework='onnx')
     gen.print_ann()
 
 def ResNet101_comp_Test():
-    d1 = '/depot/davisjam/data/chingwo/PTM-Naming/model_for_validation/resnet101-v1-onnx.onnx' # ONNX resnet101v1
-    d2 = '/depot/davisjam/data/chingwo/PTM-Naming/model_for_validation/resnet101-v1-torch.onnx' # keras resnet101v1
+    d1 = './model_for_validation/resnet101-v1-onnx.onnx' # ONNX resnet101v1
+    d2 = './model_for_validation/resnet101-v1-torch.onnx' # keras resnet101v1
     rn101onnx = onnx.load(d1)
     gen = AbstractNNGenerator(model=rn101onnx, framework='onnx')
     gen.print_ann()
@@ -458,7 +454,7 @@ def HF_Failed_Model_Test_Fix1(model_name):
     gen.get_connection()
 
 def HF_Failed_Model_Test_Fix2(model_name):
-    image = Image.open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/000000039769.jpg')
+    image = Image.open('./comparators/pytorch/000000039769.jpg')
     p = AutoProcessor.from_pretrained(model_name, cache_dir = cache_dir)
     m = AutoModel.from_pretrained(model_name, cache_dir=cache_dir)
     #inp = p(text="", return_tensors="pt")

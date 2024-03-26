@@ -11,10 +11,10 @@ from PIL import Image
 sys.setrecursionlimit(5000)
 
 def download_and_convert_model_to_json(models_dict_json_dir, output_dir, d):
-    image = Image.open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/000000039769.jpg')
+    image = Image.open('./comparators/pytorch/000000039769.jpg')
     with open(models_dict_json_dir) as f:
         models_dict = json.load(f)
-    with open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/failed_models_manual.json') as f:
+    with open('./comparators/pytorch/ptm_vectors/failed_models_manual.json') as f:
         failed_model_manual = json.load(f)
     counter = 0
     for model_arch in models_dict.keys():
@@ -23,7 +23,7 @@ def download_and_convert_model_to_json(models_dict_json_dir, output_dir, d):
     s_counter = 0
     for model_arch in models_dict.keys():
         for model_name in models_dict[model_arch]:
-            with open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/failed_models_reason.json') as f:
+            with open('./comparators/pytorch/ptm_vectors/failed_models_reason.json') as f:
                 failed_model = json.load(f)
             print('\n[{}/{}] Converting'.format(s_counter, counter), model_name, '==>\n')
             s_counter += 1
@@ -93,7 +93,7 @@ def download_and_convert_model_to_json(models_dict_json_dir, output_dir, d):
                 else:
                     print('Too Many Requests Error')
                     time.sleep(10)
-                with open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/failed_models_reason.json', 'w') as f:
+                with open('./comparators/pytorch/ptm_vectors/failed_models_reason.json', 'w') as f:
                     json.dump(failed_model, f)
                 continue
             
@@ -140,7 +140,7 @@ def download_and_convert_model_to_json(models_dict_json_dir, output_dir, d):
                     
                     failed_model[model_name][0] = 'Tracing or List Generating'
                     failed_model[model_name][1] = (emsg0, emsg1, emsg2, emsg3)
-                    with open('/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_vectors/failed_models_reason.json', 'w') as f:
+                    with open('./comparators/pytorch/ptm_vectors/failed_models_reason.json', 'w') as f:
                         json.dump(failed_model, f)
                     print(emsg0, emsg1, emsg2, emsg3)
                 else:
@@ -150,7 +150,7 @@ def download_and_convert_model_to_json(models_dict_json_dir, output_dir, d):
 if __name__ == "__main__":
 
     download_and_convert_model_to_json(
-        '/depot/davisjam/data/chingwo/PTM-Naming/model_collection/filtered_models.json',
-        '/depot/davisjam/data/chingwo/PTM-Naming/comparators/pytorch/ptm_data',
+        './model_collection/filtered_models.json',
+        './comparators/pytorch/ptm_data',
         "/scratch/gilbreth/cheung59/cache_huggingface"
         )

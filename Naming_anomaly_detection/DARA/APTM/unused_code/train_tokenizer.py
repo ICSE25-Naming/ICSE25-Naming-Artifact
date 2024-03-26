@@ -3,7 +3,7 @@ from tokenizers import BertWordPieceTokenizer
 from tokenizers.trainers import WordPieceTrainer
 
 # Load your list of sentences
-with open("/depot/davisjam/data/chingwo/PTM-Naming/vectorizer/pytorch/layer_name_data.json", "r") as f:
+with open("./vectorizer/pytorch/layer_name_data.json", "r") as f:
     training_corpus = json.load(f)
 
 # Initialize a tokenizer
@@ -11,7 +11,7 @@ tokenizer = BertWordPieceTokenizer()
 
 # Train the tokenizer
 tokenizer.train(
-    ["/depot/davisjam/data/chingwo/PTM-Naming/vectorizer/pytorch/layer_name_data.json"],
+    ["./vectorizer/pytorch/layer_name_data.json"],
     vocab_size=10000,
     min_frequency=2,
     show_progress=True,
@@ -21,4 +21,4 @@ tokenizer.train(
 )
 
 # Save the tokenizer
-tokenizer.save_model("/depot/davisjam/data/chingwo/PTM-Naming/vectorizer/pytorch")
+tokenizer.save_model("./vectorizer/pytorch")

@@ -15,13 +15,13 @@ api = hf_hub.HfApi()
 # Set arg values
 def arg_parser():
     parser = argparse.ArgumentParser(description="Process the data for the PTM-Naming project")
-    parser.add_argument("--data_path", type=str, default="/depot/davisjam/data/chingwo/PTM-v2/PTM-Naming/peatmoss_ann/rand_sample", help="Path to the data folder")
+    parser.add_argument("--data_path", type=str, default="./peatmoss_ann/rand_sample", help="Path to the data folder")
     parser.add_argument("--ann", type=bool, default=False, help="Whether the data is ANN or vectors")
     args = parser.parse_args()
     return args
 
 
-def data_processing(data_path="/depot/davisjam/data/chingwo/PTM-v2/PTM-Naming/peatmoss_ann/rand_sample", ann=False):
+def data_processing(data_path="./peatmoss_ann/rand_sample", ann=False):
 
     if ann==True:
         '''Convert ANN to feature vectors first'''
@@ -111,7 +111,7 @@ def data_cleaning():
 if __name__ == "__main__":
     args = arg_parser()
     data_path = args.data_path
-    data_path = "/depot/davisjam/data/chingwo/PTM-v2/PTM-Naming/peatmoss_ann/rand_sample_2500"
+    data_path = "./peatmoss_ann/rand_sample_2500"
     ann = args.ann
     data_processing(data_path, ann=False)
     logger.success("Data processing complete.")
