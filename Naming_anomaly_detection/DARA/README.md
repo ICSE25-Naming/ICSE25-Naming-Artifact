@@ -1,5 +1,12 @@
 
+## Overview
 
+This folder includes all the scripts and data used in our DNN Architecture Assessment pipeline (DARA, RQ4).
+
+Larger version of Figure 8 is available: 
+- [8(a)](/Naming_anomaly_detection/DARA/figures/PCA_projection_model_type.png): visualization of selected PTM features.
+- [8(b)](/Naming_anomaly_detection/DARA/figures/confusion_matrix_heatmap_model_type.png): Confusion matrix of evaluation results on `model_type`.
+- [8(c)](/Naming_anomaly_detection/DARA/figures/confusion_matrix_heatmap_arch.png):  Confusion matrix of evaluation results on `arch`.
 
 ## Requirements
 
